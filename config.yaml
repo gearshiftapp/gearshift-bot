@@ -2,18 +2,18 @@
 # Fill in the values below with your server's specific IDs
 
 # Your Discord Server (Guild) ID
-guild_id: 0  # Replace with your server ID
+guild_id: 1407091501850431708
 
 # Bot prefix (not used with slash commands, but kept for compatibility)
 prefix: "!"
 
 # Role IDs
 roles:
-  staff: 0  # Replace with your GearShift Staff role ID
+  staff: 1421280284434763866  # GearShift Staff role ID
 
 # Channel IDs
 channels:
-  mod_log: 0        # Replace with your moderation log channel ID
-  web_updates: 0    # Replace with your website updates channel ID
-  app_updates: 0    # Replace with your app updates channel ID
+  mod_log: 1425322663836127263        # Moderation log channel ID
+  web_updates: 1407497730363887678    # Website updates channel ID
+  app_updates: 1407497730363887678    # App updates channel ID (using same channel as web updates)
 
