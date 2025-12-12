@@ -1,0 +1,19 @@
+# GearShift Bot Configuration File
+# Fill in the values below with your server's specific IDs
+
+# Your Discord Server (Guild) ID
+guild_id: 0  # Replace with your server ID
+
+# Bot prefix (not used with slash commands, but kept for compatibility)
+prefix: "!"
+
+# Role IDs
+roles:
+  staff: 0  # Replace with your GearShift Staff role ID
+
+# Channel IDs
+channels:
+  mod_log: 0        # Replace with your moderation log channel ID
+  web_updates: 0    # Replace with your website updates channel ID
+  app_updates: 0    # Replace with your app updates channel ID
+
