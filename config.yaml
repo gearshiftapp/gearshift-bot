@@ -10,10 +10,17 @@ prefix: "!"
 # Role IDs
 roles:
   staff: 1421280284434763866  # GearShift Staff role ID
+  immune: 1407192703019516091  # Immune role ID (exempt from all security measures)
 
 # Channel IDs
 channels:
   mod_log: 1425322663836127263        # Moderation log channel ID
   web_updates: 1407497730363887678    # Website updates channel ID
   app_updates: 1407497730363887678    # App updates channel ID (using same channel as web updates)
+  welcome: 0                          # Welcome/verification channel ID (for auto-quarantine)
+  
+# Security Settings (optional - can be configured via security_config.json)
+# These are auto-generated on first run, but you can manually set:
+# - quarantine_role_id: Role ID for auto-quarantine
+# - mute_role_id: Role ID for silence command
 

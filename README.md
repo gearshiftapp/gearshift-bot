@@ -24,6 +24,22 @@ A feature-rich Discord bot for the "GearShift, Connecting Car Culture" community
 - `/8ball` - Ask the magic 8-ball a question
 - `/carfacts` - Get a random interesting car fact
 
+### 🔒 Security & Anti-Raid Commands
+- `/lockdown [reason]` - Immediately lock down all channels to prevent raids
+- `/unlock [reason]` - Revert permissions to pre-lockdown state
+- `/silence [duration] [reason]` - Temporarily mute all members except staff
+- `/pause_invites [reason]` - Delete all invite links and prevent new ones
+- `/set_min_age [days]` - Set minimum account age requirement
+- `/view_audit_log [limit]` - View recent audit log entries
+- `/view_user_info [user]` - Display detailed security profile for a user
+
+### 🛡️ Automatic Security Features
+- **Auto-Quarantine**: New members automatically receive a quarantine role
+- **Auto-Age Check**: Automatically kicks accounts below minimum age threshold
+- **Link Spam Filter**: Detects and removes scam/phishing links and excessive links
+- **Mass Mention Filter**: Automatically handles mention spam
+- **Anti-Nuke Monitoring**: Monitors staff actions and revokes permissions if suspicious activity is detected
+
 ## Installation
 
 ### Prerequisites
@@ -79,6 +95,16 @@ pip install -r requirements.txt
    - Create a personal access token at [GitHub Settings](https://github.com/settings/tokens)
    - Add it to `.env` as `GITHUB_TOKEN`
 
+5. **Optional: Configure Security Features**:
+   - On first run, the bot will create `security_config.json` with default settings
+   - Edit `security_config.json` to configure:
+     - `quarantine_role_id`: Role ID for auto-quarantine (new members get this role)
+     - `mute_role_id`: Role ID for the `/silence` command
+     - `min_account_age_days`: Minimum account age (default: 7 days)
+     - `link_spam_threshold`: Max links per message before action (default: 3)
+     - `mention_spam_threshold`: Max mentions per message before action (default: 5)
+     - Toggle features: `auto_quarantine_enabled`, `auto_age_check_enabled`, etc.
+
 ### Step 4: Invite the Bot to Your Server
 
 1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
@@ -88,13 +114,19 @@ pip install -r requirements.txt
    - `bot`
    - `applications.commands`
 5. Select the following bot permissions:
-   - Manage Messages
-   - Kick Members
-   - Ban Members
-   - Moderate Members
-   - Send Messages
-   - Embed Links
-   - Read Message History
+   - Administrator (recommended for full functionality)
+   - OR select individually:
+     - Manage Messages
+     - Kick Members
+     - Ban Members
+     - Moderate Members
+     - Send Messages
+     - Embed Links
+     - Read Message History
+     - Manage Channels
+     - Manage Roles
+     - View Audit Log
+     - Manage Server
 6. Copy the generated URL and open it in your browser to invite the bot
 
 ### Step 5: Run the Bot
@@ -123,6 +155,14 @@ All commands are slash commands. Simply type `/` in Discord to see available com
 - `/ping` shows bot latency
 - `/8ball` provides randomized responses
 - `/carfacts` displays random car-related facts
+
+### Security Commands
+- All security commands require Administrator permissions
+- `/lockdown` saves current permissions and locks all channels
+- `/unlock` restores permissions from before lockdown
+- `/silence` applies mute role to all non-staff members
+- `/view_user_info` shows account age, join date, warnings, and suspicious indicators
+- Auto-filters run automatically on message send and member join
 
 ## Troubleshooting
 

@@ -94,7 +94,7 @@ class GearShiftBot(commands.Bot):
         logger.info("Setting up cogs...")
         
         # Load cogs
-        cogs = ['cogs.moderation', 'cogs.gearshift', 'cogs.fun']
+        cogs = ['cogs.moderation', 'cogs.gearshift', 'cogs.fun', 'cogs.security']
         for cog in cogs:
             try:
                 await self.load_extension(cog)
